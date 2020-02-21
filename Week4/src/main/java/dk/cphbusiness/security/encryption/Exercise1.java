@@ -17,9 +17,13 @@ public class Exercise1 {
     String dec = new String( decoder.decode( STR1 ) );
     System.out.println("Decoded string is: "+dec);
 
-    int k = 9; // Exercise - which K yields the right result
-    String res = rot(STR2, k);
-    System.out.println("Decrypted string is: "+res);
+    //int k = -17; // Exercise - which K yields the right result
+    //String res = rot(STR2, k);
+    //System.out.println("Decrypted string is: "+res);
+      for (int i = 0; i < 52 ;i++) {
+          System.out.println("Current value: "+ i);
+          System.out.println(rot(STR2,i));
+      }
     }
 
   private static String rot(String in, int offset) {
