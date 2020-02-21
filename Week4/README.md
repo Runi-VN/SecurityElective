@@ -8,9 +8,9 @@
 
 **The given offset (rotation) is 9.** You can change it to -17 to get the same output as the given offset.  
 The reason is that the alphabet used is the standard latin 26-letter alphabet (A-Z). -17 is just the difference (9) from the alphabet length (26).  
-The same happens if you give it an offset of 35, which is 26+9
-```
-##### I tested the rotations with the following code:
+The same happens if you give it an offset of 35, which is 26+9  
+
+**I tested the rotations with the following code:**
 ```java
 for (int i = 0; i < 52 ;i++) {
     System.out.println("Current value: "+ i);
