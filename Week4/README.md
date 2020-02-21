@@ -28,9 +28,44 @@ Cesar thought Cleopatra had a most charming nose
 Cesar used rot4, and the most common seems to be rot13 (for the most far away letters, therefore most confusing?)
 
 ### Exercise 2
-This exercise uses an "incredible dumb and stupid" password scheme, as the actual input is a number between 1000 and 9999. You must find out which one. Your attack form here is brute force (trying them all).
+*This exercise uses an "incredible dumb and stupid" password scheme, as the actual input is a number between 1000 and 9999. You must find out which one. Your attack form here is brute force (trying them all).*
 
-Hint: If you want to automate validation, the word "everything" occurs in the original text.
+*Hint: If you want to automate validation, the word "everything" occurs in the original text.*
+
+The start code provides us with the following hints and variables:
+```java
+int k = 0; // which k yields the right result
+String key = "passwordabcd"+k; // has to be 128 bit/16 bytes
+```
+which throws the following exception:
+```java
+java.security.InvalidKeyException: Invalid AES key length: 13 bytes
+```
+However, using the instructions of bruteforcing numbers 1000-9999 I came up with this solution:
+```java
+for (int i = 1000; i <= 10000; i++) {
+    String key = "passwordabcd" + i; // has to be 128 bit/16 bytes
+    String dec = "";
+    try {
+		dec = decrypt(CIFER, key);
+    } catch (Exception e) {
+		//we don't care
+		continue;
+    }
+    if (dec != null && dec.contains("everything")) {
+		System.out.println("Decrypted: " + dec);
+		System.out.println("Password value: " + i);
+		break;
+		}
+    }
+```
+which gave the result:
+```java
+Decrypted: Mobile was Internet 2.0. It changed everything. Crypto is Internet 3.0.
+Password value: 7345
+```
+meaning that the password **is equal to passwordabc7345**.
+The first decrpyted value occurs at *1072* but returns gibberish.
 
 ### Exercise 3
 This exercise is about writing a small toy editor which allow you to store small texts in encrypted format. The save function is there, but you have to write the load.
