@@ -20,7 +20,7 @@ public class Exercise2 {
 
         for (int i = 1000; i <= 10000; i++) {
             String key = "passwordabcd" + i; // has to be 128 bit/16 bytes
-            String dec = "";
+            String dec;
             try {
                 dec = decrypt(CIFER, key);
             } catch (Exception e) {
