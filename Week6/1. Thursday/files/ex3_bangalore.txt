@@ -1,0 +1,35 @@
+kali@kali:~$ ping 165.22.211.96 
+PING 165.22.211.96 (165.22.211.96) 56(84) bytes of data.
+64 bytes from 165.22.211.96: icmp_seq=1 ttl=51 time=164 ms
+64 bytes from 165.22.211.96: icmp_seq=2 ttl=51 time=165 ms
+64 bytes from 165.22.211.96: icmp_seq=3 ttl=51 time=163 ms
+64 bytes from 165.22.211.96: icmp_seq=4 ttl=51 time=163 ms
+64 bytes from 165.22.211.96: icmp_seq=5 ttl=51 time=163 ms
+64 bytes from 165.22.211.96: icmp_seq=6 ttl=51 time=170 ms
+64 bytes from 165.22.211.96: icmp_seq=8 ttl=51 time=163 ms
+64 bytes from 165.22.211.96: icmp_seq=9 ttl=51 time=163 ms
+64 bytes from 165.22.211.96: icmp_seq=10 ttl=51 time=171 ms
+64 bytes from 165.22.211.96: icmp_seq=11 ttl=51 time=171 ms
+^C
+--- 165.22.211.96 ping statistics ---
+11 packets transmitted, 10 received, 9.09091% packet loss, time 10041ms
+rtt min/avg/max/mdev = 162.724/165.656/171.410/3.452 ms
+                                                                                                                                                                                                    
+kali@kali:~$ sudo traceroute -I 165.22.211.96
+[sudo] password for kali:                                                                                                                                                                                                                 
+traceroute to 165.22.211.96 (165.22.211.96), 30 hops max, 60 byte packets                                                                                                                                                                 
+ 1  10.0.2.2 (10.0.2.2)  0.139 ms  0.091 ms  0.072 ms                                                                                                                                                                                     
+ 2  192.168.1.1 (192.168.1.1)  1.007 ms  1.082 ms  1.267 ms                                                                                                                                                                               
+ 3  2-107-174-1-dynamic.dk.customer.tdc.net (2.107.174.1)  7.234 ms  7.234 ms  7.285 ms                                                                                                                                                   
+ 4  ae7-0.asd3nqp1.nl.ip.tdc.net (83.88.1.220)  19.073 ms  19.078 ms  19.245 ms                                                                                                                                                           
+ 5  ix-ae-25-0.tcore1.av2-amsterdam.as6453.net (195.219.194.216)  20.592 ms  20.581 ms  20.620 ms                                                                                                                                         
+ 6  if-ae-2-2.tcore2.av2-amsterdam.as6453.net (195.219.194.6)  27.058 ms  25.484 ms  25.637 ms                                                                                                                                            
+ 7  if-ae-14-2.tcore2.l78-london.as6453.net (80.231.131.160)  25.393 ms  24.899 ms  24.917 ms                                                                                                                                             
+ 8  80.231.131.66 (80.231.131.66)  135.439 ms  136.739 ms  136.797 ms                                                                                                                                                                     
+ 9  * * *                                                                                                                                                                                                                                 
+10  219.65.110.190.static-bangalore.vsnl.net.in (219.65.110.190)  175.965 ms  175.983 ms  176.065 ms
+11  * * *
+12  * * *
+13  165.22.211.96 (165.22.211.96)  163.655 ms  163.105 ms  163.049 ms
+kali@kali:~$ 
+

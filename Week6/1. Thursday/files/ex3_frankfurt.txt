@@ -1,0 +1,30 @@
+kali@kali:~$ ping 207.154.192.50
+PING 207.154.192.50 (207.154.192.50) 56(84) bytes of data.
+64 bytes from 207.154.192.50: icmp_seq=1 ttl=56 time=31.5 ms
+64 bytes from 207.154.192.50: icmp_seq=2 ttl=56 time=30.7 ms
+64 bytes from 207.154.192.50: icmp_seq=3 ttl=56 time=23.1 ms
+64 bytes from 207.154.192.50: icmp_seq=4 ttl=56 time=21.2 ms
+64 bytes from 207.154.192.50: icmp_seq=5 ttl=56 time=23.6 ms
+64 bytes from 207.154.192.50: icmp_seq=6 ttl=56 time=26.1 ms
+64 bytes from 207.154.192.50: icmp_seq=7 ttl=56 time=20.7 ms
+64 bytes from 207.154.192.50: icmp_seq=8 ttl=56 time=20.5 ms
+64 bytes from 207.154.192.50: icmp_seq=9 ttl=56 time=22.4 ms
+64 bytes from 207.154.192.50: icmp_seq=10 ttl=56 time=23.7 ms
+^C
+--- 207.154.192.50 ping statistics ---
+11 packets transmitted, 10 received, 9.09091% packet loss, time 10017ms
+rtt min/avg/max/mdev = 20.471/24.335/31.473/3.727 ms
+
+kali@kali:~$ sudo traceroute -I 207.154.192.50
+traceroute to 207.154.192.50 (207.154.192.50), 30 hops max, 60 byte packets
+ 1  10.0.2.2 (10.0.2.2)  0.154 ms  0.080 ms  0.072 ms
+ 2  192.168.1.1 (192.168.1.1)  1.212 ms  1.256 ms  1.303 ms
+ 3  2-107-174-1-dynamic.dk.customer.tdc.net (2.107.174.1)  6.902 ms  6.887 ms  7.008 ms
+ 4  ae7-0.asd3nqp1.nl.ip.tdc.net (83.88.1.220)  18.919 ms  21.431 ms  21.423 ms
+ 5  80.249.213.143 (80.249.213.143)  21.407 ms  21.388 ms  21.373 ms
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  207.154.192.50 (207.154.192.50)  21.742 ms  20.242 ms  20.195 ms
+kali@kali:~$ 
+

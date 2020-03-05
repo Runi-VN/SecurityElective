@@ -1,0 +1,14 @@
+kali@kali:~$ sudo traceroute -I 207.154.192.50
+[sudo] password for kali: 
+traceroute to 207.154.192.50 (207.154.192.50), 30 hops max, 60 byte packets
+ 1  10.0.2.2 (10.0.2.2)  0.177 ms  0.086 ms  0.320 ms
+ 2  192.168.1.1 (192.168.1.1)  1.326 ms  1.544 ms  1.575 ms
+ 3  2-107-174-1-dynamic.dk.customer.tdc.net (2.107.174.1)  8.376 ms  8.352 ms  8.371 ms
+ 4  ae7-0.asd3nqp1.nl.ip.tdc.net (83.88.1.220)  20.758 ms  20.773 ms  20.780 ms
+ 5  80.249.213.143 (80.249.213.143)  20.579 ms  20.555 ms  20.750 ms
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  207.154.192.50 (207.154.192.50)  23.834 ms  26.836 ms  26.841 ms
+kali@kali:~$ 
+
