@@ -27,7 +27,8 @@ rtt min/avg/max/mdev = 0.441/0.479/0.504/0.023 ms
 ```host 192.168.1.83:5551``` 
 - Start the capture
 - Hit ENTER in Firefox, and when you see the response (Cannot GET /) → Stop the capture  
-Saved as `ex1_sample.pcapng` TODO: add link  
+Saved as `ex1_sample.pcapng` **[link](files/ex1_sample.pcapng)**
+
 
 ### Investigating the sample 
 ##### Identify the individual “envelope parts” of the HTTP package
@@ -82,10 +83,13 @@ Ethernet II, Src: RealtekU_12:35:02 (52:54:00:12:35:02), Dst: PcsCompu_1f:30:76 
 
 ### Identify the initial TCP Three-Way Handshake (and the close down Handshake)
 
-Saved as `ex1_3wayhandshake.png`. todo: add image  
-Description: todo  
-Found by (wshark) **statistics** -> **flow graph** --> flow type: **tcp flows**  
+Saved as `ex1_3wayhandshake.png`. **[link](files/ex1_3wayhandshake.png)**
+![](files/ex1_3wayhandshake.png)
+Description: Found by (wshark) **statistics** -> **flow graph** --> flow type: **tcp flows**  
 
+##### Why could this part be relevant for a hacker?  
+Blocking out access by never responding to the SYN ACK:  
+https://www.imperva.com/learn/application-security/syn-flood/  
 
 
 ## Exercise 2
@@ -95,8 +99,8 @@ Found by (wshark) **statistics** -> **flow graph** --> flow type: **tcp flows**
 192.168.1.83:5551/img.jpg
 ```
 
-**Sample saved as `ex2_sample`** todo  
-**Stats saved as `ex2_packetlengths.txt`** todo  
+**Sample saved as `ex2_sample`: [link](files/ex2_sample.pcapng)**  
+**Stats saved as `ex2_packetlengths.txt`** **[link](files/ex2_packetlengths.txt)**  
 
 
 - In the Capture filter box type: tcp
@@ -122,12 +126,12 @@ Finally there is a request for the website `favicon` which is not found, and the
 
 ### Use ping and traceroute to measure connectivity and distance from you to DigitalOcean droplets in Frankfurt, Bangalore
 
-**Results saved as ex3_bangalore.txt AND ex3_frankfurt.txt** todo add link  
+**Results saved as [ex3_bangalore.txt](files/ex3_bangalore.txt) AND [ex3_frankfurt.txt](files/ex3_frankfurt.txt)** 
 
 ### Challenge: Explain traceroute with the help of Wireshark
 ##### Hint: Using a display filter like this will help: udp || icmp
 
-**Results saved as ex3challenge_traceroute.txt & ex3challenge_traceroute.pcapng** todo add link
+**Results saved as [ex3challenge_traceroute.txt](files/ex3challenge_traceroute.txt) & [ex3challenge_traceroute.pcapng](files/ex3challenge_traceroute.pcapng)**  
 
 We passed the `-I` parameter to the traceroute, so the ICMP (protocol) is used.  
 It is pretty clear to me that traceroute works by utilizing the TTL (Time-to-live) field on the IP packet header.  
@@ -156,7 +160,7 @@ This can be seen in the **data** how our TTL increases until it exceeds in trans
 ## Exercise 4
 
 ### Wireshark capturing DNS
-**Data at ex4_sample.pcapng** todo add link
+**Data at [ex4_sample.pcapng](files/ex4_sample.pcapng)**  
 
 Answer the following questions  
 Add dns as your display filter  
@@ -401,7 +405,8 @@ IP address       HW type     Flags       HW address            Mask     Device
 10.0.2.2         0x1         0x2         52:54:00:12:35:02     *        eth0
 ```
 
-Diagram saved to `ex6_arpdiagram.png` todo add here  
+Diagram saved to [ex6_arpdiagram.png](files/ex6_arpdiagram.png):  
+![](files/ex6_arpdiagram.png)
 
 Shortly after clearing the arp cache, my NIC `eth0`, sent a broadcast request:
 
@@ -442,4 +447,4 @@ write down a small reminder to yourself about:
   - the good ol' *broadcast and hope for a response*.
 
 
---> Dangers of ARP spoofing <--
+--> todo Dangers of ARP spoofing <--
