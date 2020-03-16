@@ -31,9 +31,49 @@ Transports data between the local network (local gateways (switches, hubs, compu
 
 -----------------  
 
-
 #### DHCP - Dynamic Host Configuration Protocol  
 Hosts can ask for a IP to be given by the DHCP server for a dynamic IP opposite of a static IP  
 
 #### DNS - Domain Name System  
 resolving/caching - Ask own cache first, ask ISP cache, recursive DNS search
+
+-----------------  
+
+# Class notes (Friday)
+
+
+Name som application layer protocols:  
+
+HTTP, Telnet, FTP, DNS  
+
+Network protocols:  
+
+IPv4, IPv6, ICMP
+
+How does application layer packets get from A to B?  
+TCP/UDP with the help of ARP?  
+
+Purpose of the transport layer?  
+
+Conceptual differences between TCP and UDP?  
+TCP holds the connection therefore longer overhead but "guaranteed" arrival. Receipts are sent. Used for many connections, e.g. file transfers.  
+UDP sends the packets and does not care. Often used for streaming. Much faster.  
+
+What is DNS?  
+Domain Name System. Local or external caches resolves <websitename> to their IP. vulnerable to spoof attack.
+
+What is DHCP, what happens on startup?  
+Protocol:  
+Server: assigns a IP address to devices that request it. devices start as 0.0.0.0 and are then assigned an actual IP.
+
+
+
+
+
+
+
+
+
+
+
+

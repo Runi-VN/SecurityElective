@@ -1,0 +1,16 @@
+{
+  "name": "Week7",
+  "version": "1.0.0",
+  "description": "https://docs.google.com/document/d/102KrU8kMEeNwAqWJqFjqwjkN0BxtRTugyIqDbt2-zA0/edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.21.3"
+  }
+}
