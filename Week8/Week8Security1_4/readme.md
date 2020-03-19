@@ -3,6 +3,8 @@ https://docs.google.com/document/d/17qAmASaAAjEAWindIglrdg78LFVitqBklogn8OxjxsQ/
 
 ### Basic auth
 
+#### Exercise 1
+
 e) Monitor the requests and responses between client and server.
 - Explain how your Browser knows when to put up the login window (chrome://net-internals/#events)
 
@@ -31,14 +33,27 @@ HTTPS. Hashing.
 
 f) Reflect (write down) the pros & cons of using Basic Authentication, and the use cases where it (still) could be relevant
 
-Pros:
+**Pros:**  
 Easy to implement  
 "Fast" in terms of:  
 - Request has one call for authentication, afterwards set on header.   
 - Less code
-Relatively safe if used with SSL  
+Relatively safe if used with SSL [link](https://security.stackexchange.com/questions/988/is-basic-auth-secure-if-done-over-https)  
 
-Cons:  
+
+**Cons:**  
 Unsafe if used over HTTP.  
 HTTPs basic auth is considerably slower  
-Lack of encryption is high-risk
+Lack of encryption is high-risk  
+The same unencrypted data is sent every time, so it is really unsafe. MitM attacks can hit at any request, not just the first like in other auth types.  
+No consistent way to log out  
+Unlike JWT you cannot store any other information than username:password  
+Only one GUI to use (browser dependant)  
+
+
+**When to use:**  
+?  
+
+#### Exercise 2
+
+c) Reflect (write down) the pros & cons of using Form-based Authentication, and the use cases where it could be relevant
