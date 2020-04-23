@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.owasp.encoder.Encode;
+import org.owasp.html.HtmlPolicyBuilder;
+import org.owasp.html.PolicyFactory;
 
 @WebServlet(name = "Sanitizer", urlPatterns = {"/Sanitizer"})
 public class Sanitizer extends HttpServlet {
@@ -30,27 +32,39 @@ public class Sanitizer extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String plainUserData = request.getParameter("input");
-        String encoded = "<b>Change me</b> to show the original string, HTML-Encoded";
-        String simpleTags = "<b>Change me</b> to allow simple tags (bold and italic), but no other tags";
-        String noTags = "<b>Change me</b> to allow NO tags at all";
-        try ( PrintWriter out = response.getWriter()) {
+
+        /* BOLD_ITALIC*/
+        PolicyFactory policy_bold_italic = new HtmlPolicyBuilder()
+                .allowElements("b", "em")
+                .toFactory();
+        String safeHTML_bold_italic_only = policy_bold_italic.sanitize(plainUserData);
+        
+        /* NO TAGS */
+        PolicyFactory policy_strict = new HtmlPolicyBuilder()
+                .toFactory();
+        String safeHTML_strict = policy_strict.sanitize(plainUserData);
+
+        String encoded = "<b>Change me</b> to show the original string, HTML-Encoded --> \n" + Encode.forHtml(plainUserData); //owasp.encode
+        String simpleTags = "<b>Change me</b> to allow simple tags (bold and italic), but no other tags --> \n" + safeHTML_bold_italic_only; //owasp.policy
+        String noTags = "<b>Change me</b> to allow NO tags at all --> \n" + safeHTML_strict; //owasp.policy
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Sanitizer</title>");            
+            out.println("<title>Servlet Sanitizer</title>");
             out.println("</head>");
             out.println("<body style=\"font-family:sans-serif\">");
             out.println("<h2>Encoder + Sanitizer Demo</h2>");
             out.println("<p>Use your browsers 'inspect' button to se the actual content of the string below</p>");
-            out.print(plainUserData);
+            out.print("Plain: " + plainUserData);
             out.println("<br/><br/>");
             out.println(encoded);
             out.println("<br/><br/>");
             out.println(simpleTags);
             out.println("<br/><br/>");
             out.println(noTags);
-            out.print("<div style=\"margin-top:25px;\"><a href=\""+request.getContextPath()+"/index.html\">Home</a></div>");
+            out.print("<div style=\"margin-top:25px;\"><a href=\"" + request.getContextPath() + "/index.html\">Home</a></div>");
             out.println("</body>");
             out.println("</html>");
         }
