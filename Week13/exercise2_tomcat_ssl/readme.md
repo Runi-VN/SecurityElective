@@ -25,3 +25,11 @@ https://docs.google.com/document/d/1pY6gbHgAzzMZshgwIhejSZ9ROtQy8dHacci0mdJvdcI/
 
 **Certificate path**:  
 ![](images/Fifth.PNG) 
+
+**Details 1**:  
+
+![](images/Sixth.PNG) 
+
+**Details 2**:  
+
+![](images/Seventh.PNG) 
