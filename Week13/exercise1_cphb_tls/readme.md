@@ -4,7 +4,7 @@ https://docs.google.com/document/d/13oD_h5fO9i1rIeQaiMxzG54w3q5dc0neL8nPGX2HEdw/
 
 
 **Overview:**
-![](/images/Overview.png)  
+![](images/Overview.PNG)  
 Visiting the school website and recording the TLS handshake.  
 
 ### Questions: 
@@ -43,14 +43,14 @@ Transport Layer Security
 **[MAC (Message Authentication Code)](https://www.zytrax.com/tech/survival/encryption.html#mac)**  can also be seen in the cipher suite as `SHA`.  
 **Digital Signatures**, **Certificates** and **Certificate Authorities and Certificate Trust Hierarchies**:  
 
-![](/images/Signatures.png)  
+![](images/Signatures.PNG)  
 
 
 
 
 - How many Cipher Suites did the Client (browser) support?
 The client (Chrome) supported a total of 17 suites:  
-![](/images/CipherSuites.png)  
+![](images/CipherSuites.PNG)  
 
 - Which of the Cipher Suites, supported by the client, was chosen by the server?  
 The server chose the following cipher suite:  
@@ -58,7 +58,7 @@ The server chose the following cipher suite:
 Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
 ```  
 (Diffie-Hellman -> RSA -> AES256("CBC") -> SHA)  
-![](/images/ChosenCipherSuite.png)  
+![](images/ChosenCipherSuite.PNG)  
 
 - Open one of the Secure Socket Layer packages for an Application Data request.  
 Shown above - encrypted.
