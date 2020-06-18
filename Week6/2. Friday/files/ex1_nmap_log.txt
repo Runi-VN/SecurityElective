@@ -1,0 +1,117 @@
+kali@kali:~$ nmap -v -p 0-5552 -A 192.168.1.83 -Pn
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-03-06 04:00 EST
+NSE: Loaded 151 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 04:00
+Completed NSE at 04:00, 0.00s elapsed
+Initiating NSE at 04:00
+Completed NSE at 04:00, 0.00s elapsed
+Initiating NSE at 04:00
+Completed NSE at 04:00, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 04:00
+Completed Parallel DNS resolution of 1 host. at 04:00, 0.02s elapsed
+Initiating Connect Scan at 04:00
+Scanning 192.168.1.83 [5553 ports]
+Discovered open port 445/tcp on 192.168.1.83
+Discovered open port 3306/tcp on 192.168.1.83
+Discovered open port 139/tcp on 192.168.1.83
+Discovered open port 135/tcp on 192.168.1.83
+Discovered open port 2105/tcp on 192.168.1.83
+Discovered open port 5357/tcp on 192.168.1.83
+Discovered open port 2107/tcp on 192.168.1.83
+Discovered open port 2103/tcp on 192.168.1.83
+Discovered open port 1801/tcp on 192.168.1.83
+Discovered open port 5551/tcp on 192.168.1.83
+Discovered open port 2869/tcp on 192.168.1.83
+Discovered open port 5040/tcp on 192.168.1.83
+Completed Connect Scan at 04:01, 15.72s elapsed (5553 total ports)
+Initiating Service scan at 04:01
+Scanning 12 services on 192.168.1.83
+Completed Service scan at 04:03, 156.29s elapsed (12 services on 1 host)
+NSE: Script scanning 192.168.1.83.
+Initiating NSE at 04:03
+Completed NSE at 04:04, 14.40s elapsed
+Initiating NSE at 04:04
+Completed NSE at 04:04, 1.01s elapsed
+Initiating NSE at 04:04
+Completed NSE at 04:04, 0.00s elapsed
+Nmap scan report for 192.168.1.83
+Host is up (0.0044s latency).
+Not shown: 5541 filtered ports
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+1801/tcp open  msmq?
+2103/tcp open  msrpc         Microsoft Windows RPC
+2105/tcp open  msrpc         Microsoft Windows RPC
+2107/tcp open  msrpc         Microsoft Windows RPC
+2869/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Service Unavailable
+3306/tcp open  mysql?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    Host '192.168.1.83' is not allowed to connect to this MySQL server
+|_mysql-info: ERROR: Script execution failed (use -d to debug)
+5040/tcp open  unknown
+5357/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Service Unavailable
+5551/tcp open  http          Node.js Express framework
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Error
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3306-TCP:V=7.80%I=7%D=3/6%Time=5E621157%P=x86_64-pc-linux-gnu%r(NUL
+SF:L,48,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is\x20not\x20allowed\
+SF:x20to\x20connect\x20to\x20this\x20MySQL\x20server")%r(GenericLines,48,"
+SF:\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is\x20not\x20allowed\x20to\
+SF:x20connect\x20to\x20this\x20MySQL\x20server")%r(GetRequest,48,"\0\0\0\x
+SF:ffj\x04Host\x20'192\.168\.1\.83'\x20is\x20not\x20allowed\x20to\x20conne
+SF:ct\x20to\x20this\x20MySQL\x20server")%r(HTTPOptions,48,"\0\0\0\xffj\x04
+SF:Host\x20'192\.168\.1\.83'\x20is\x20not\x20allowed\x20to\x20connect\x20t
+SF:o\x20this\x20MySQL\x20server")%r(RTSPRequest,48,"\0\0\0\xffj\x04Host\x2
+SF:0'192\.168\.1\.83'\x20is\x20not\x20allowed\x20to\x20connect\x20to\x20th
+SF:is\x20MySQL\x20server")%r(RPCCheck,48,"\0\0\0\xffj\x04Host\x20'192\.168
+SF:\.1\.83'\x20is\x20not\x20allowed\x20to\x20connect\x20to\x20this\x20MySQ
+SF:L\x20server")%r(DNSVersionBindReqTCP,48,"\0\0\0\xffj\x04Host\x20'192\.1
+SF:68\.1\.83'\x20is\x20not\x20allowed\x20to\x20connect\x20to\x20this\x20My
+SF:SQL\x20server")%r(DNSStatusRequestTCP,48,"\0\0\0\xffj\x04Host\x20'192\.
+SF:168\.1\.83'\x20is\x20not\x20allowed\x20to\x20connect\x20to\x20this\x20M
+SF:ySQL\x20server")%r(Help,48,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x2
+SF:0is\x20not\x20allowed\x20to\x20connect\x20to\x20this\x20MySQL\x20server
+SF:")%r(SSLSessionReq,48,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is\x
+SF:20not\x20allowed\x20to\x20connect\x20to\x20this\x20MySQL\x20server")%r(
+SF:TerminalServerCookie,48,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is
+SF:\x20not\x20allowed\x20to\x20connect\x20to\x20this\x20MySQL\x20server")%
+SF:r(TLSSessionReq,48,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is\x20n
+SF:ot\x20allowed\x20to\x20connect\x20to\x20this\x20MySQL\x20server")%r(Ker
+SF:beros,48,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is\x20not\x20allo
+SF:wed\x20to\x20connect\x20to\x20this\x20MySQL\x20server")%r(SMBProgNeg,48
+SF:,"\0\0\0\xffj\x04Host\x20'192\.168\.1\.83'\x20is\x20not\x20allowed\x20t
+SF:o\x20connect\x20to\x20this\x20MySQL\x20server")%r(X11Probe,48,"\0\0\0\x
+SF:ffj\x04Host\x20'192\.168\.1\.83'\x20is\x20not\x20allowed\x20to\x20conne
+SF:ct\x20to\x20this\x20MySQL\x20server");
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2020-03-06T09:03:51
+|_  start_date: N/A
+
+NSE: Script Post-scanning.
+Initiating NSE at 04:04
+Completed NSE at 04:04, 0.00s elapsed
+Initiating NSE at 04:04
+Completed NSE at 04:04, 0.00s elapsed
+Initiating NSE at 04:04
+Completed NSE at 04:04, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 187.89 seconds
+kali@kali:~$ 
+
