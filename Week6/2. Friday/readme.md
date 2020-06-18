@@ -19,7 +19,8 @@ nmap -v -p 0-5552 -A 192.168.1.83
 No, it's a really aggressive form to check every port from 0-5552 (where our app is located at 5551).  
 At the same time we check for running services and applications.  
 
-Our app is found: ```
+Our app is found: 
+```
 5551/tcp open  http          Node.js Express framework
 ```
 
